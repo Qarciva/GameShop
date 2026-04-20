@@ -23,7 +23,7 @@ Spring Events: გამოყენებულია ApplicationEventPublisher
 2. რევიუების & რეაქციების სისტემა
    Business Validation: რევიუს დატოვება შეუძლია მხოლოდ იმ მომხმარებელს, ვისაც შეძენილი აქვს კონკრეტული თამაში.
 
-Review Reactions: Like/Dislike სისტემა რთული "Toggle" ლოგიკით (აღრიცხავს დუბლირებულ რეაქციებს).
+Review Reactions: Like/Dislike სისტემა  "Toggle" ლოგიკით (აღრიცხავს დუბლირებულ რეაქციებს).
 
 Rating Aggregation: თამაშის საშუალო რეიტინგის ავტომატური დათვლა ყოველი ახალი რევიუს დროს.
 
