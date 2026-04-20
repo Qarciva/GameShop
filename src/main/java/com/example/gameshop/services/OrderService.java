@@ -3,6 +3,7 @@ package com.example.gameshop.services;
 import com.example.gameshop.entities.Game;
 import com.example.gameshop.entities.Order;
 import com.example.gameshop.entities.User;
+import com.example.gameshop.events.OrderCompleteEvent;
 import com.example.gameshop.exceptions.GameAlreadyPurchasedException;
 import com.example.gameshop.exceptions.GameNotAvailableException;
 import com.example.gameshop.exceptions.GameNotFoundException;
@@ -14,6 +15,7 @@ import com.example.gameshop.utils.UserManager;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,6 +25,7 @@ public class OrderService {
     private final GameRepository gameRepository;
     private final UserManager userManager;
     private final UserRepository userRepository;
+    private final ApplicationEventPublisher eventPublisher;
     @Transactional
     public void placeOrder(Long gameId){
         Game game = gameRepository.findById(gameId).orElseThrow(
@@ -49,5 +52,6 @@ public class OrderService {
         user.getOrders().add(order);
         user.getLibrary().add(game);
         orderRepository.save(order);
+        eventPublisher.publishEvent(new OrderCompleteEvent(user,game.getPrice(), game.getName()));
     }
 }

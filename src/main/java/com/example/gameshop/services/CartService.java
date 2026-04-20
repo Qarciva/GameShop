@@ -95,7 +95,7 @@ public class CartService {
         messageBody.append("\n\nThank you for your purchase!");
         cart.getItems().clear();
         cartRepository.save(cart);
-        emailService.sendEmail(user.getEmail(), "Order Confirmation", messageBody.toString());
+       // emailService.sendEmail(user.getEmail(), "Order Confirmation", messageBody.toString());
         
     }
 
