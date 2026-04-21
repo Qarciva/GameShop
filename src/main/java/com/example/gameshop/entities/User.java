@@ -42,7 +42,6 @@ public class User implements UserDetails {
     private Set<Game> library = new HashSet<>();
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // .name() დააბრუნებს ტექსტს "ROLE_USER" ან "ROLE_ADMIN"
         return List.of(new org.springframework.security.core.authority.SimpleGrantedAuthority(role.name()));
     }
 
