@@ -52,7 +52,7 @@ public class CartService {
             throw new GameNotAvailableException("Game Not available");
         
        if(cart == null){
-            cart = new Cart(); // Builder-ის ნაცვლად გამოიყენე კონსტრუქტორი სატესტოდ
+            cart = new Cart();
             cart.setUser(user);
             cart.setItems(new ArrayList<>());
             user.setCart(cart);
