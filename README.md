@@ -1,4 +1,6 @@
 GameShop - Backend Platform
+[English Version Below]
+
 GameShop არის Spring Boot-ზე დაფუძნებული ელექტრონული კომერციის პლატფორმის Backend სისტემა, რომელიც შექმნილია თამაშების ციფრული გაყიდვების, მომხმარებლების ბიბლიოთეკისა და ინტერაქტიული რევიუების მართვისთვის.
 
 🚀 ტექნოლოგიური სტეკი
@@ -23,7 +25,7 @@ Spring Events: გამოყენებულია ApplicationEventPublisher
 2. რევიუების & რეაქციების სისტემა
    Business Validation: რევიუს დატოვება შეუძლია მხოლოდ იმ მომხმარებელს, ვისაც შეძენილი აქვს კონკრეტული თამაში.
 
-Review Reactions: Like/Dislike სისტემა  "Toggle" ლოგიკით (აღრიცხავს დუბლირებულ რეაქციებს).
+Review Reactions: Like/Dislike სისტემა "Toggle" ლოგიკით (აღრიცხავს დუბლირებულ რეაქციებს).
 
 Rating Aggregation: თამაშის საშუალო რეიტინგის ავტომატური დათვლა ყოველი ახალი რევიუს დროს.
 
@@ -34,9 +36,27 @@ Threaded Comments: მომხმარებლებს შეუძლია
 
 Data Protection: გამოყენებულია DTO (Data Transfer Object) პატერნი და ვალიდაციები.
 
+🇺🇸 English Version
+GameShop is a Spring Boot-based e-commerce backend system designed for digital game sales, user library management, and interactive community features.
 
-მონაცემთა ბაზის კონფიგურაცია:
-src/main/resources/application.properties ფაილში მიუთითეთ თქვენი მონაცემთა ბაზის პარამეტრები:
+🚀 Technology Stack
+Java 17 | Spring Boot 3.x | Spring Data JPA
+
+Spring Security | Lombok | Maven
+
+✨ Key Features
+Order Management: Full checkout cycle with Spring Events for service decoupling (Automatic email notifications and library updates).
+
+Review System: Complex business validation (purchase-only reviews), Like/Dislike toggle logic, and automatic rating aggregation.
+
+Social Interaction: Support for threaded comments and nested replies.
+
+Performance Optimization: Successfully resolved the N+1 Selection problem using JOIN FETCH and EntityGraphs.
+
+Security: Implementation of the DTO Pattern and strict data validation.
+
+⚙️ Database Configuration / კონფიგურაცია
+src/main/resources/application.properties
 
 Properties
 spring.datasource.url=jdbc:mysql://localhost:3306/game_shop?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
