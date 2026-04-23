@@ -61,4 +61,4 @@ src/main/resources/application.properties
 Properties
 spring.datasource.url=jdbc:mysql://localhost:3306/game_shop?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
 spring.datasource.username=your_username
-spring.datasource.password=your_password
+spring.datasource.password=your_passworდ
